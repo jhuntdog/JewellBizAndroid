@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     
-    <style name="ActionBar" parent="@android:style/Widget.Holo.ActionBar" />
-    
-    <style name="ActionBar.Light" parent="@style/ActionBar">
-    	<item name="android:background">@color/actionbar_background_light</item>
-    </style>
-    
-	<style name="ActionBar.Dark" parent="@style/ActionBar">
-    	<item name="android:background">@color/actionbar_background_dark</item>
-	</style>
 	
-	<style name="AppTheme.Light" parent="@android:style/Theme.Holo.Light">
-	    <item name="android:actionBarStyle">@style/ActionBar.Light</item>
+	<style name="AppThemeLight" parent="Theme.Sherlock.Light.ForceOverflow">
+	    <item name="actionBarStyle">@style/ActionBarLight</item>
+	    <item name="android:actionBarStyle">@style/ActionBarLight</item>
 	    <item name="android:windowActionBarOverlay">true</item>
 	    <item name="listDragShadowBackground">@android:color/background_light</item>
 	    
@@ -24,8 +16,9 @@
 	    
     </style>
     
-	<style name="AppTheme.Dark" parent="@android:style/Theme.Holo">
-	    <item name="android:actionBarStyle">@style/ActionBar.Dark</item>
+	<style name="AppThemeDark" parent="Theme.Sherlock.ForceOverflow">
+	    <item name="actionBarStyle">@style/ActionBarDark</item>
+	    <item name="android:actionBarStyle">@style/ActionBarDark</item>
 	    <item name="android:windowActionBarOverlay">true</item>
 	    <item name="listDragShadowBackground">@android:color/background_dark</item>
 	    
@@ -36,6 +29,16 @@
 	    <item name="menuIconAbout">@drawable/ic_about_holo_dark</item>
 	    
     </style>
+    
+<!-- 	<style name="ActionBar" parent="@android:style/Widget.Holo.ActionBar" /> -->
+    
+	<style name="ActionBarLight" parent="Widget.Sherlock.Light.ActionBar">
+    	<item name="android:background">@color/actionbar_background_light</item>
+    </style>
+    
+	<style name="ActionBarDark" parent="Widget.Sherlock.ActionBar">
+    	<item name="android:background">@color/actionbar_background_dark</item>
+	</style>
     
     
 </resources>

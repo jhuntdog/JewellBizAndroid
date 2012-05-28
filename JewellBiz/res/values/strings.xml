@@ -1,7 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">Hello World, JewellBizActivity!</string>
     <string name="app_name">JewellBiz</string>
+    <string name="app_description">JewellBiz Today Reader App</string>
+    
+    <string name="jewellbiz_url">http://jewellbiz.com/</string>
+    
+    <string name="title_viewerName">JewellBizViewer</string>
+	<string name="title_share">Share</string>
+    
+	<string name="action_bar_share_with">Share with</string>
+	
+	<string name="menu_share">Share</string>
+	<string name="menu_refresh">Refresh</string>
+    <string name="menu_search">Search</string>
+	<string name="menu_prefs">Prefs</string>
+	<string name="menu_help">Help</string>
+    <string name="menu_about">About</string>
+    <string name="menu_markallread">Mark All Read</string>
+	<string name="menu_toggleTheme">Toggle Theme</string>
+    <string name="menu_toggleList">Toggle List</string>
+    
+    <string name="search_hint">Search Articles</string>
+    <string name="search_no_results">No Results</string>
+    
+    <string name="menu_share_url">Share Url</string>
+    
+    <string name="pref_key_flag_background_update">background_update_flag</string>
+    <string name="pref_title_background_update_flag">Allow Updates</string>
+    <string name="pref_summary_background_update_flag">Download tutorial list daily</string>
+    <string name="pref_category_bgupdates">Background Updates</string>
+    
+    <string name="pref_category_general">General Info</string>
+    <string name="pref_about_title">About</string>
+    <string name="pref_about_summary">more on Jewell Biz Today App</string>
+    <string name="pref_about_textView">About JewellBiz Today App</string>
+    
+    <string name="notification_bar_text">JewellBiz Updated</string>
+    <string name="notification_title">@string/notification_bar_text</string>
+    <string name="notification_info_success">Tap to launch app</string>
+    <string name="notification_info_fail">Updating failed</string>
+    
+    <string name="url_selection_cab_title">Url Selection</string>
+    
+	<string name="display_prefs">Display Preferences</string>
+    <string name="pref_title_only_unread">Show Unread Only</string>
+    <string name="pref_summary_only_unread">Only display unread items in the list</string>
+    <string name="pref_key_only_unread">only_unread_flag</string>
+    <string name="empty_list_label">You have no tutorials to read!</string>
+    
+    <string name="appwidget_label">JewellBiz Latest:</string>
+    <string name="empty_view_text">Empty View Text</string>
+    <string name="appwidget_name">JewellBiz Today Widget</string>
+    <string name="appwidget_toast_format_string">%1$s is the url</string>
+    
+    <string name="dialog_activity_title">About Jewell Biz Today</string>
+    <string name="dialog_activity_text">JewellBiz Today.</string>
+    <string name="dialog_about_text_html">
+        <![CDATA[
+        <p>Jewell Biz was developed to learn about mobile application development.</p>
+        <p>This application is not affiliated with William Jewell College in any official capacity.</p>
+        <p>Please contact me if you have any questions or I can help in any way.</p>
+        <p><strong>Go Cardinals!</strong></p>
+        ]]>
+	</string>
+    
 
 </resources>
