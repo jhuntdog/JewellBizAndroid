@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <PreferenceCategory 
+        android:title="@string/pref_category_bgupdates">
+        
+        <CheckBoxPreference 
+            android:key="@string/pref_key_flag_background_update" 
+            android:summary="@string/pref_summary_background_update_flag" 
+            android:title="@string/pref_title_background_update_flag" />
+    
+    </PreferenceCategory>
+    
+    <PreferenceCategory 
+        android:title="@string/display_prefs">
+        
+        <CheckBoxPreference 
+            android:key="@string/pref_key_only_unread" 
+            android:summary="@string/pref_summary_only_unread" 
+            android:title="@string/pref_title_only_unread" />
+    
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_category_general">
+        <PreferenceScreen android:title="@string/pref_about_title" android:summary="@string/pref_about_summary">
+            
+            <intent  android:action="android.intent.action.VIEW"
+                android:targetPackage="com.jewellbiz.android.jewellbiztoday" 
+                android:targetClass="com.jewellbiz.android.jewellbiztoday.AboutActivity" /> 
+            
+        </PreferenceScreen>
+        
+        
+    </PreferenceCategory>
+    
+
+</PreferenceScreen>

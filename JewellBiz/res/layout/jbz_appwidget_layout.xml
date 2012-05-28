@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="@dimen/widget_margin_top"
+    android:layout_marginBottom="@dimen/widget_margin_bottom"
+    android:layout_marginLeft="@dimen/widget_margin_left"
+    android:layout_marginRight="@dimen/widget_margin_right">
+    <!-- We define separate margins to allow for flexibility in twiddling the margins
+         depending on device form factor and target SDK version. -->
+
+	<FrameLayout 
+	    android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/appwidget_bg" >
+        
+	    <ImageButton
+	        android:id="@+id/widget_header"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center_vertical"
+	        android:layout_marginLeft="10dip"
+	        android:adjustViewBounds="true"
+	        android:scaleType="fitXY"
+	        android:src="@drawable/logo_jbz1" />
+	    
+	    <ImageButton 
+	        android:id="@+id/widget_refresh"
+	        android:layout_width="56dp"
+            android:layout_height="39dp"
+            android:layout_gravity="right|top"
+            android:layout_marginRight="14dp"
+            android:layout_marginTop="4dp"
+	        android:background="@drawable/refresh_button" />
+	    
+	</FrameLayout>
+	
+	<FrameLayout 
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:layout_weight="1"
+        android:layout_gravity="center"
+         >
+		
+	    <ListView
+	        android:id="@+id/widget_titles_list"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:gravity="center"
+	        android:loopViews="true" />
+	    
+	    <TextView
+	       	android:id="@+id/empty_view"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:gravity="center"
+	        android:visibility="gone"
+	        android:textColor="#ffffff"
+	        android:textStyle="bold"
+	        android:text="@string/empty_view_text"
+	        android:textSize="20sp" />
+	    
+	
+	</FrameLayout>
+
+</LinearLayout>
