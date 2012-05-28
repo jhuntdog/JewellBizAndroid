@@ -19,12 +19,16 @@
             android:title="@string/pref_title_only_unread" />
     
     </PreferenceCategory>
-    <PreferenceCategory android:title="@string/pref_category_general">
-        <PreferenceScreen android:title="@string/pref_about_title" android:summary="@string/pref_about_summary">
+    <PreferenceCategory 
+        android:title="@string/pref_category_general">
+        <PreferenceScreen 
+            android:title="@string/pref_about_title" 
+            android:summary="@string/pref_about_summary">
             
-            <intent  android:action="android.intent.action.VIEW"
-                android:targetPackage="com.jewellbiz.android.jewellbiztoday" 
-                android:targetClass="com.jewellbiz.android.jewellbiztoday.AboutActivity" /> 
+            <intent  
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="com.jewellbiz.android.jewellbiz" 
+                android:targetClass="com.jewellbiz.android.jewellbiz.ui.AboutActivity" /> 
             
         </PreferenceScreen>
         
