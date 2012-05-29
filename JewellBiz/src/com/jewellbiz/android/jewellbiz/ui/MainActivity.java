@@ -14,14 +14,10 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 public class MainActivity extends BaseActivity implements JbzListFragment.OnItemSelectedListener {
-	
-	public static final String EXTRA_ARTICLE_URL = "articleUrl";
-	
+		
 	private boolean mDualFragments = false;
 	private String[] mToggleLabels = {"Show Titles", "Hide Titles"};
 	private boolean mTitlesHidden = false;
-
-	private String articleUrl;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -124,12 +120,12 @@ public class MainActivity extends BaseActivity implements JbzListFragment.OnItem
 	}
 	
 	@Override
-	public void onItemSelected(String articletUrl) {
+	public void onItemSelected(String articleUrl) {
 		ContentFragment contentFrag = (ContentFragment) getSupportFragmentManager()
 				.findFragmentById(R.id.content_frag);
 		
 		if (contentFrag == null || !contentFrag.isInLayout()) {
-			Intent showContent = new Intent(getApplicationContext(),
+			Intent showContent = new Intent(this,
 	                ContentActivity.class);
 	        showContent.setData(Uri.parse(articleUrl));
 	        startActivity(showContent);

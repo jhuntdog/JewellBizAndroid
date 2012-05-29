@@ -19,7 +19,7 @@ public class JbzProvider extends ContentProvider {
 	
 	private JbzDatabase mDB;
 	
-	private static final String AUTHORITY = "com.jewellbiz.android.jewellbiztoday.data.JbzProvider";
+	private static final String AUTHORITY = "com.jewellbiz.android.jewellbiz.data.JbzProvider";
 	
 	public static final int ARTICLES = 100;
 	public static final int ARTICLE_ID = 110;

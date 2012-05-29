@@ -48,7 +48,7 @@ public class JbzListFragment extends SherlockListFragment implements LoaderManag
 	private int selectedPosition = -1;
 	
 	public interface OnItemSelectedListener {
-	    public void onItemSelected(String articletUrl);
+	    public void onItemSelected(String articleUrl);
 	}
 	
 	@Override
