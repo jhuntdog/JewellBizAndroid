@@ -2,4 +2,32 @@
 <resources>
     <color name="actionbar_background_light">#ccffffff</color>
     <color name="actionbar_background_dark">#cc000000</color>
+    
+    <color name="body_text_1">#ff000000</color>
+    <color name="body_text_2">#99000000</color>
+    <color name="body_text_disabled">#66000000</color>
+
+    <color name="body_text_1_inverse">#ffffffff</color>
+    <color name="body_text_2_inverse">#99ffffff</color>
+
+    <color name="accent_1">#ff29549f</color>
+    <color name="hyperlink">#ffff549f</color>
+    <color name="background_1">#ffffffff</color>
+    
+	<color name="sherlock_android_green">#FFA4C639</color>
+	<color name="sherlock_honeycombish_blue">#FF58BAED</color>
+	<color name="sherlock_soft_grey">#FF777777</color>
+	<color name="sherlock_background">#FFEFEFEF</color>
+	
+	<color name="android_blue">#FF33B5E5</color>
+	<color name="android_blue_dark">#FF0099CC</color>
+	<color name="android_purple">#FFAA66CC</color>
+	<color name="android_purple_dark">#FF9933CC</color>
+	<color name="android_green">#FF99CC00</color>
+	<color name="android_green_dark">#FF669900</color>
+	<color name="android_orange">#FFFFBB33</color>
+	<color name="android_orange_dark">#FFFF8800</color>
+	<color name="android_red">#FFFF4444</color>
+	<color name="android_red_dark">#FFCC0000</color>
+    
 </resources>
