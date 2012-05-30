@@ -21,6 +21,7 @@ import android.os.Bundle;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.actionbarsherlock.view.Menu;
 import com.jewellbiz.android.jewellbiz.R;
 
 
@@ -36,7 +37,11 @@ public class ArticleActivity extends BaseActivity {
 	 public void onCreate(Bundle savedInstanceState) {
 		 super.onCreate(savedInstanceState); 
 		 
-		 setContentView(R.layout.content); 
+		 setContentView(R.layout.content);
+		 
+		 ActionBar actionBar = getSupportActionBar();
+		 actionBar.setDisplayShowTitleEnabled(false);
+		 actionBar.setDisplayHomeAsUpEnabled(true);
 		 
 		 Intent launchingIntent = getIntent();
 		 String content = launchingIntent.getData().toString();
@@ -46,16 +51,13 @@ public class ArticleActivity extends BaseActivity {
 		 
 		 mWebView.updateUrl(content);
 		 
-		 ActionBar actionBar = getSupportActionBar();
-		 actionBar.setDisplayShowTitleEnabled(false);
-		 
 	 }
 	 
 	 
 	 @Override
 	  protected void onSaveInstanceState(Bundle outState) {
 	      super.onSaveInstanceState(outState);
-	      outState.putInt("theme", mThemeId);
+	      //outState.putInt("theme", mThemeId);
 	  }
 
 	

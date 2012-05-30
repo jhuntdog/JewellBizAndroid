@@ -72,7 +72,7 @@ public class ArticleFragment extends SherlockFragment {
 		mSoloFragment = listFragment == null ? true : false;
 		
 		
-		/*if (mSoloFragment) {
+		if (mSoloFragment) {
 			// The fragment is alone, so enable up navigation
 			ActionBar bar = getSherlockActivity().getSupportActionBar();
 			bar.setDisplayHomeAsUpEnabled(true);
@@ -84,50 +84,37 @@ public class ArticleFragment extends SherlockFragment {
 		if (mSoloFragment) {
 			ViewTreeObserver observer = getView().getViewTreeObserver();
 			observer.addOnGlobalLayoutListener(layoutListener);
-		}*/
+		}
 		
 		
 		
 			
 	}
 	
-	/*@Override
+	@Override
 	public void onDestroyView() {
 	  super.onDestroyView();
 	  // Always detach ViewTreeObserver listeners when the view tears down
 	  getView().getViewTreeObserver().removeGlobalOnLayoutListener(layoutListener);
 	}
 	
+	// Options Menu
+	// ----------------------------------------
 	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-		getSherlockActivity().getSupportMenuInflater().inflate(R.menu.content_menu, menu);
+		super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.content_menu, menu);
+		//getSherlockActivity().getSupportMenuInflater().inflate(R.menu.content_menu, menu);
 		
-		MenuItem actionItem = menu.findItem(R.id.content_menu_share);
+		/*MenuItem actionItem = menu.findItem(R.id.content_menu_share);
 		ShareActionProvider actionProvider = (ShareActionProvider) actionItem.getActionProvider();
 		actionProvider.setShareHistoryFileName(ShareActionProvider.DEFAULT_SHARE_HISTORY_FILE_NAME);
-		actionProvider.setShareIntent(createShareIntent());
-		
-		super.onCreateOptionsMenu(menu, inflater);
+		actionProvider.setShareIntent(createShareIntent());*/
 	}
 	
-
-	private Intent createShareIntent() {
-		String jbzUrl = getResources().getString(R.string.jewellbiz_url);
-
-		Intent shareIntent = new Intent(Intent.ACTION_SEND);
-		shareIntent.setType("text/plain");
-		shareIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
-		
-		shareIntent.putExtra(Intent.EXTRA_TEXT, jbzUrl);
-		
-		
-		return shareIntent;
-	}
-
-
 	@Override
 	public void onPrepareOptionsMenu(Menu menu) {
-		
+		super.onPrepareOptionsMenu(menu);
 	}
 	
 	@Override
@@ -142,7 +129,7 @@ public class ArticleFragment extends SherlockFragment {
 			return super.onOptionsItemSelected(item);
 		}
 		
-	}*/
+	}
 	
 	public void updateUrl(String newUrl) {
 		if (mWebView !=null) {
@@ -161,9 +148,9 @@ public class ArticleFragment extends SherlockFragment {
 		outState.putInt("listPosition", mCurPosition);
 	}
 	
-	/*ViewTreeObserver.OnGlobalLayoutListener layoutListener = new ViewTreeObserver.OnGlobalLayoutListener() {
+	ViewTreeObserver.OnGlobalLayoutListener layoutListener = new ViewTreeObserver.OnGlobalLayoutListener() {
 		public void onGlobalLayout() {
-			int barHeight = getActivity().getActionBar().getHeight();
+			int barHeight = getSherlockActivity().getSupportActionBar().getHeight();
 			View contentView = getView();
 			FrameLayout.LayoutParams params = (LayoutParams) contentView.getLayoutParams();
 			// The list view top-margin should always match the action bar height
@@ -172,12 +159,12 @@ public class ArticleFragment extends SherlockFragment {
 				contentView.setLayoutParams(params);
 			}
 			// The action bar doesn't update its height when hidden, so make top-margin zero
-			if (!getActivity().getActionBar().isShowing()) {
+			if (!getSherlockActivity().getSupportActionBar().isShowing()) {
 			  params.topMargin = 0;
 			  contentView.setLayoutParams(params);
 			}
 		}
-	};*/
+	};
 	
 
 }

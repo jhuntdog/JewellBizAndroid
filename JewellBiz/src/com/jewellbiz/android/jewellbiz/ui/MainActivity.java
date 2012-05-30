@@ -3,6 +3,7 @@ package com.jewellbiz.android.jewellbiz.ui;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
@@ -17,6 +18,9 @@ public class MainActivity extends BaseActivity implements
 	
 	private boolean mDualPane = false;
 	
+	HeadlinesFragment mHeadlinesFragment;
+	ArticleFragment mArticleFragment;
+	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +29,16 @@ public class MainActivity extends BaseActivity implements
         
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayShowTitleEnabled(false);
+        
+        // find our fragments
+        mHeadlinesFragment = (HeadlinesFragment) getSupportFragmentManager().findFragmentById(R.id.headlines_frag);
+        mArticleFragment = (ArticleFragment) getSupportFragmentManager().findFragmentById(R.id.article_frag);
+        
+        // determine single or double pane mode
+        View articleView = findViewById(R.id.article_frag);
+        mDualPane = articleView !=null && articleView.getVisibility() == View.VISIBLE;
+        
+        
 	}
 	
 	// Options Menu

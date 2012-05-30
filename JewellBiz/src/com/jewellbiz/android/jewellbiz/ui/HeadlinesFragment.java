@@ -42,6 +42,7 @@ import com.actionbarsherlock.app.SherlockListFragment;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
+
 import com.jewellbiz.android.jewellbiz.R;
 import com.jewellbiz.android.jewellbiz.data.JbzDatabase;
 import com.jewellbiz.android.jewellbiz.data.JbzProvider;
@@ -124,16 +125,16 @@ public class HeadlinesFragment extends SherlockListFragment implements
 		// attach global layout listener to get callback when layout has finished loading
 		// do this so that we can adapt the top margin and account for
 		// actionbar being in "overlay" mode
-		/*ViewTreeObserver observer = getListView().getViewTreeObserver();
-		observer.addOnGlobalLayoutListener(layoutListener);*/
+		ViewTreeObserver observer = getListView().getViewTreeObserver();
+		observer.addOnGlobalLayoutListener(layoutListener);
 	}
 	
-	/*@Override
+	@Override
 	public void onDestroyView() {
 	  super.onDestroyView();
 	  // Always detach ViewTreeObserver listeners when the view tears down
 	  getListView().getViewTreeObserver().removeGlobalOnLayoutListener(layoutListener);
-	}*/
+	}
 	
 	private boolean showReadFlag;
 	
@@ -351,11 +352,11 @@ public class HeadlinesFragment extends SherlockListFragment implements
 		}			
 	}
 	
-	/*ViewTreeObserver.OnGlobalLayoutListener layoutListener = new ViewTreeObserver.OnGlobalLayoutListener() {
+	ViewTreeObserver.OnGlobalLayoutListener layoutListener = new ViewTreeObserver.OnGlobalLayoutListener() {
 		
 		@Override
 		public void onGlobalLayout() {
-			int barHeight = getActivity().getActionBar().getHeight();
+			int barHeight = getSherlockActivity().getSupportActionBar().getHeight();
 			ListView listView = getListView();
 			FrameLayout.LayoutParams params = (LayoutParams) listView.getLayoutParams();
 			// The list view top-margin should always match the action bar height
@@ -364,12 +365,12 @@ public class HeadlinesFragment extends SherlockListFragment implements
 				listView.setLayoutParams(params);
 			}
 			// The action bar doesn't update its height when hidden, so make top-margin zero
-			if (!getActivity().getActionBar().isShowing()) {
+			if (!getSherlockActivity().getSupportActionBar().isShowing()) {
 				params.topMargin = 0;
 				listView.setLayoutParams(params);
 			}
 		}
-	};*/
+	};
 	
 	
 
