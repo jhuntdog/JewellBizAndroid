@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     
-	
-	<style name="AppThemeLight" parent="Theme.Sherlock.Light.ForceOverflow">
-	    <item name="actionBarStyle">@style/ActionBarLight</item>
-	    <item name="android:actionBarStyle">@style/ActionBarLight</item>
+	<style name="ThemeJewell" parent="Theme.Sherlock.Light.ForceOverflow">
+	    <item name="android:windowActionBarOverlay">true</item>
+	    <item name="windowActionBarOverlay">true</item>
+	    
+	    <item name="android:actionBarItemBackground">@drawable/ad_selectable_background_wj</item>
+		<item name="actionBarItemBackground">@drawable/ad_selectable_background_wj</item>
+		
+		<item name="android:dropDownListViewStyle">@style/JewellDropDownListView</item>
+		<item name="dropDownListViewStyle">@style/JewellDropDownListView</item>
+	    
+	</style>
+    
+    
+	<style name="ThemeICSLight" parent="Theme.Sherlock.Light.ForceOverflow">
+	    <!-- <item name="actionBarStyle">@style/ActionBarLight</item>
+	    <item name="android:actionBarStyle">@style/ActionBarLight</item> -->
 	    <item name="android:windowActionBarOverlay">true</item>
 	    <item name="listDragShadowBackground">@android:color/background_light</item>
 	    
@@ -16,10 +28,10 @@
 	    
     </style>
     
-	<style name="AppThemeDark" parent="Theme.Sherlock.ForceOverflow">
-	    <item name="actionBarStyle">@style/ActionBarDark</item>
-	    <item name="android:actionBarStyle">@style/ActionBarDark</item>
-	    <item name="android:windowActionBarOverlay">true</item>
+	<style name="ThemeICSDark" parent="Theme.Sherlock.ForceOverflow">
+<!-- 	    <item name="actionBarStyle">@style/ActionBarDark</item> -->
+<!-- 	    <item name="android:actionBarStyle">@style/ActionBarDark</item> -->
+	    <!-- <item name="android:windowActionBarOverlay">true</item> -->
 	    <item name="listDragShadowBackground">@android:color/background_dark</item>
 	    
 	    <item name="menuIconShare">@drawable/ic_menu_share_holo_dark</item>
@@ -33,11 +45,17 @@
 <!-- 	<style name="ActionBar" parent="@android:style/Widget.Holo.ActionBar" /> -->
     
 	<style name="ActionBarLight" parent="Widget.Sherlock.Light.ActionBar">
-    	<item name="android:background">@color/actionbar_background_light</item>
+    	<!-- <item name="android:background">@color/actionbar_background_light</item> -->
     </style>
     
 	<style name="ActionBarDark" parent="Widget.Sherlock.ActionBar">
     	<item name="android:background">@color/actionbar_background_dark</item>
+	</style>
+	
+	<!--  ActionBar DropDown List -->
+	<!-- style the items within the overflow menu -->
+	<style name="JewellDropDownListView" parent="Widget.Sherlock.ListView.DropDown">
+		<item name="android:listSelector">@drawable/ad_selectable_background_wj</item>
 	</style>
     
     
