@@ -5,8 +5,8 @@
     android:layout_height="match_parent">
 
 	<fragment 
-	    class="com.jewellbiz.android.jewellbiz.ui.ContentFragment"
-	    android:id="@+id/content_frag"
+	    class="com.jewellbiz.android.jewellbiz.ui.ArticleFragment"
+	    android:id="@+id/article_frag"
 	    android:layout_width="match_parent"
 	    android:layout_height="match_parent" >
 	</fragment>

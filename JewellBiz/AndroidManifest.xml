@@ -11,6 +11,7 @@
         android:theme="@style/AppThemeLight"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name" android:logo="@drawable/logo_jbz1" >
+        <!-- android:name="com.jewellbiz.android.jewellbiz.JewellBizApplication" -->
         <activity
             android:name="com.jewellbiz.android.jewellbiz.ui.MainActivity"
             android:label="@string/app_name" >
@@ -21,18 +22,18 @@
             </intent-filter>
         </activity>
         
-        <activity android:name="com.jewellbiz.android.jewellbiz.ui.ContentActivity"></activity>
+        <activity android:name="com.jewellbiz.android.jewellbiz.ui.ArticleActivity"></activity>
         
-        <activity android:name="com.jewellbiz.android.jewellbiz.ui.PrefsActivity"></activity>
+        <activity android:name="com.jewellbiz.android.jewellbiz.ui.JbzPrefsActivity"></activity>
         
         <provider 
-            android:name="com.jewellbiz.android.jewellbiz.data.JbzProvider" 
+            android:name=".data.JbzProvider" 
             android:authorities="com.jewellbiz.android.jewellbiz.data.JbzProvider"></provider>
         
         <service 
-            android:name="com.jewellbiz.android.jewellbiz.service.JbzDownloaderService"></service>
+            android:name=".service.JbzDownloaderService"></service>
         <receiver 
-            android:name="com.jewellbiz.android.jewellbiz.receiver.AlarmReceiver"></receiver>
+            android:name=".receiver.AlarmReceiver"></receiver>
         
         
     </application>

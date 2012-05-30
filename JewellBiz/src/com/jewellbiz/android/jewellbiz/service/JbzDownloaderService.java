@@ -190,7 +190,7 @@ public class JbzDownloaderService extends Service{
 			updateComplete.when = System.currentTimeMillis();
 			
 			Intent notificationIntent = new Intent(context,
-					JewellBizTodayActivity.class);
+					JewellBizActivity.class);
 			PendingIntent contentIntent = PendingIntent.getActivity(context, 0, 
 					notificationIntent, 0);
 			
