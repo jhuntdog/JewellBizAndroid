@@ -5,8 +5,11 @@
 	    <item name="android:windowActionBarOverlay">true</item>
 	    <item name="windowActionBarOverlay">true</item>
 	    
-	    <item name="android:actionBarItemBackground">@drawable/ad_selectable_background_wj</item>
-		<item name="actionBarItemBackground">@drawable/ad_selectable_background_wj</item>
+	    <item name="android:actionBarItemBackground">@drawable/jbz_selectable_background</item>
+		<item name="actionBarItemBackground">@drawable/jbz_selectable_background</item>
+		
+		<item name="android:popupMenuStyle">@style/JewellPopupMenu</item>
+		<item name="popupMenuStyle">@style/JewellPopupMenu</item>
 		
 		<item name="android:dropDownListViewStyle">@style/JewellDropDownListView</item>
 		<item name="dropDownListViewStyle">@style/JewellDropDownListView</item>
@@ -66,10 +69,15 @@
     	<item name="android:background">@color/actionbar_background_dark</item>
 	</style>
 	
+	<!-- style the overflow menu -->
+	<style name="JewellPopupMenu" parent="Widget.Sherlock.Light.PopupMenu">
+		<item name="android:popupBackground">@drawable/jbz_menu_dropdown_panel_holo_light</item>
+	</style>
+	
 	<!--  ActionBar DropDown List -->
 	<!-- style the items within the overflow menu -->
 	<style name="JewellDropDownListView" parent="Widget.Sherlock.ListView.DropDown">
-		<item name="android:listSelector">@drawable/ad_selectable_background_wj</item>
+		<item name="android:listSelector">@drawable/jbz_selectable_background</item>
 	</style>
     
     
