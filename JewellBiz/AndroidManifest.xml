@@ -24,7 +24,13 @@
         
         <activity android:name="com.jewellbiz.android.jewellbiz.ui.ArticleActivity"></activity>
         
-        <activity android:name="com.jewellbiz.android.jewellbiz.ui.JbzPrefsActivity" android:theme="@style/ThemePrefs"></activity>
+        <activity 
+            android:name="com.jewellbiz.android.jewellbiz.ui.JbzPrefsActivity" 
+            android:theme="@style/ThemePrefs">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jewellbiz.android.jewellbiz.ui.MainActivity" />
+        </activity>
         
         <provider 
             android:name=".data.JbzProvider" 

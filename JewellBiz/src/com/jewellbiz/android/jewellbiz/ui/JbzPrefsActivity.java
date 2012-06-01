@@ -29,6 +29,7 @@ import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.Preference.OnPreferenceClickListener;
+import android.support.v4.app.NavUtils;
 import android.text.util.Linkify;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -36,6 +37,7 @@ import android.widget.TextView;
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.ActionBar.LayoutParams;
 import com.actionbarsherlock.app.SherlockPreferenceActivity;
+import com.actionbarsherlock.view.MenuItem;
 import com.actionbarsherlock.view.Window;
 import com.jewellbiz.android.jewellbiz.R;
 import com.jewellbiz.android.jewellbiz.data.JbzDatabase;
@@ -157,6 +159,22 @@ public class JbzPrefsActivity extends SherlockPreferenceActivity {
 		
 	}
 	
+	@Override
+    protected void onStart() {
+        super.onStart();
+    }
+	
+	@Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case android.R.id.home:
+			NavUtils.navigateUpFromSameTask(this);
+            return true;
+		}
+		
+		return super.onOptionsItemSelected(item);
+		
+	}
 	
 	
 	
