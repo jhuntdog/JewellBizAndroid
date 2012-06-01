@@ -28,9 +28,6 @@
         android:title="@string/menu_markallread" 
         android:showAsAction="withText" />
     
-    <item android:id="@+id/menu_toggleTheme" 
-        android:title="@string/menu_toggleTheme" />
-    
     <item android:id="@+id/menu_prefs" 
         android:icon="@drawable/ic_menu_preferences" 
         android:title="@string/menu_prefs" 

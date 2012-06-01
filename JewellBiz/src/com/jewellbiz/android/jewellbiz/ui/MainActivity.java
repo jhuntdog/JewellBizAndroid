@@ -16,14 +16,20 @@ import com.jewellbiz.android.jewellbiz.service.JbzDownloaderService;
 public class MainActivity extends BaseActivity implements 
 		HeadlinesFragment.OnItemSelectedListener {
 	
-	private boolean mDualPane = false;
+	private String[] mToggleLabels = {"Show Titles", "Hide Titles"};
+	private boolean mTitlesHidden = false;
 	
+	private boolean mDualPane = false;
 	HeadlinesFragment mHeadlinesFragment;
 	ArticleFragment mArticleFragment;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
+        if(savedInstanceState != null) {
+        	mTitlesHidden = savedInstanceState.getBoolean("titlesHidden");
+        }
         
         setContentView(R.layout.main);
         
@@ -34,10 +40,11 @@ public class MainActivity extends BaseActivity implements
         mHeadlinesFragment = (HeadlinesFragment) getSupportFragmentManager().findFragmentById(R.id.headlines_frag);
         mArticleFragment = (ArticleFragment) getSupportFragmentManager().findFragmentById(R.id.article_frag);
         
-        // determine single or double pane mode
-        View articleView = findViewById(R.id.article_frag);
-        mDualPane = articleView !=null && articleView.getVisibility() == View.VISIBLE;
+        if (mArticleFragment != null) mDualPane = true;
         
+        if (mTitlesHidden) {
+        	getSupportFragmentManager().beginTransaction().hide(mHeadlinesFragment);
+        }
         
 	}
 	
@@ -53,6 +60,12 @@ public class MainActivity extends BaseActivity implements
 	
 	@Override
 	public boolean onPrepareOptionsMenu(Menu menu) {
+		
+		if (!mDualPane) {
+			menu.removeItem(R.id.menu_toggleList);
+		} else {
+			menu.findItem(R.id.menu_toggleList).setTitle(mToggleLabels[mTitlesHidden ? 0 : 1]);
+		}
 		
 		// refresh menu item
 		Intent refreshIntent = new Intent(getApplicationContext(), JbzDownloaderService.class);
