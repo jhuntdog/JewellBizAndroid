@@ -74,7 +74,6 @@
 		<item name="android:popupBackground">@drawable/jbz_menu_dropdown_panel_holo_light</item>
 	</style>
 	
-	<!--  ActionBar DropDown List -->
 	<!-- style the items within the overflow menu -->
 	<style name="JewellDropDownListView" parent="Widget.Sherlock.ListView.DropDown">
 		<item name="android:listSelector">@drawable/jbz_selectable_background</item>
