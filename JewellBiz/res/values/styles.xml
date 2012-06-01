@@ -10,6 +10,12 @@
 		
 		<item name="android:dropDownListViewStyle">@style/JewellDropDownListView</item>
 		<item name="dropDownListViewStyle">@style/JewellDropDownListView</item>
+		
+		<item name="menuIconShare">@drawable/ic_menu_share_holo_light</item>
+	    <item name="menuIconSearch">@drawable/ic_menu_search_holo_light</item>
+	    <item name="menuIconRefresh">@drawable/ic_refresh_holo_light</item>
+	    <item name="menuIconToggle">@drawable/ic_menu_toggle_holo_light</item>
+	    <item name="menuIconAbout">@drawable/ic_about_holo_light</item>
 	    
 	</style>
     
