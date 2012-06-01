@@ -2,11 +2,17 @@
 <resources>
     <dimen name="titles_size">250dp</dimen>
     
+    <dimen name="default_padding">8dp</dimen>
+    <dimen name="layout_padding">10dp</dimen>
+    <dimen name="inline_padding">4dp</dimen>
+    
     <dimen name="widget_margin">8dp</dimen>
     
 	<dimen name="widget_margin_top">8dp</dimen>
     <dimen name="widget_margin_bottom">8dp</dimen>
     <dimen name="widget_margin_left">8dp</dimen>
     <dimen name="widget_margin_right">8dp</dimen>
+    
+    
     
 </resources>

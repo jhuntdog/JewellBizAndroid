@@ -78,6 +78,13 @@
 	<style name="JewellDropDownListView" parent="Widget.Sherlock.ListView.DropDown">
 		<item name="android:listSelector">@drawable/jbz_selectable_background</item>
 	</style>
+	
+	<style name="ScrollingLayout">
+        <item name="android:paddingBottom">@dimen/default_padding</item>
+        <item name="android:paddingLeft">@dimen/layout_padding</item>
+        <item name="android:paddingRight">@dimen/layout_padding</item>
+        <item name="android:paddingTop">@dimen/layout_padding</item>
+    </style>
     
     
 </resources>
