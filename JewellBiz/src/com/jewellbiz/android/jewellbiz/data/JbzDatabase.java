@@ -10,7 +10,7 @@ import android.util.Log;
 public class JbzDatabase extends SQLiteOpenHelper {
 	
 	private static final String DEBUG_TAG = "JbzDatabase";
-	private static final int DB_VERSION = 1;
+	public static final int DB_VERSION = 1;
 	private static final String DB_NAME = "jbz_database";
 	
 	public static final String TABLE_ARTICLES = "articles";

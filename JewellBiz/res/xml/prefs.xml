@@ -17,21 +17,21 @@
             android:key="@string/pref_key_only_unread" 
             android:summary="@string/pref_summary_only_unread" 
             android:title="@string/pref_title_only_unread" />
+        
+        <ListPreference 
+            android:title="@string/pref_choose_theme"
+            android:key="com.jewellbiz.android.jewellbiz.theme"
+            android:entries="@array/array_entries_listpref_apptheme"
+            android:entryValues="@array/array_entryvalues_listpref_apptheme"
+            android:defaultValue="0" />
     
     </PreferenceCategory>
     <PreferenceCategory 
         android:title="@string/pref_category_general">
-        <PreferenceScreen 
-            android:title="@string/pref_about_title" 
-            android:summary="@string/pref_about_summary">
-            
-            <intent  
-                android:action="android.intent.action.VIEW"
-                android:targetPackage="com.jewellbiz.android.jewellbiz" 
-                android:targetClass="com.jewellbiz.android.jewellbiz.ui.AboutActivity" /> 
-            
-        </PreferenceScreen>
         
+        <Preference
+            android:key="aboutPref"
+            android:title="@string/pref_about_title" />
         
     </PreferenceCategory>
     

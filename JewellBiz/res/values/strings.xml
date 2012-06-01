@@ -5,6 +5,7 @@
     <string name="app_description">JewellBiz Today Reader App</string>
     
     <string name="jewellbiz_url">http://jewellbiz.com/</string>
+    <string name="jewellbiz_feedburner_url">http://feeds.feedburner.com/JewellBusinessToday?format=xml</string>
     
     <string name="title_viewerName">JewellBizViewer</string>
 	<string name="title_share">Share</string>
@@ -49,6 +50,9 @@
     <string name="pref_key_only_unread">only_unread_flag</string>
     <string name="empty_list_label">You have no tutorials to read!</string>
     
+    <string name="pref_theme_set">Set Theme</string>
+    <string name="pref_choose_theme">Choose Theme</string>
+    
     <string name="appwidget_label">JewellBiz Latest:</string>
     <string name="empty_view_text">Empty View Text</string>
     <string name="appwidget_name">JewellBiz Today Widget</string>
@@ -64,6 +68,21 @@
         <p><strong>Go Cardinals!</strong></p>
         ]]>
 	</string>
+	<string name="about_message_title">About Jewell Biz Android</string>
+    <string name="about_message">http://android.jewellbiz.com - developed by Jason Huntington.\n\nThis application is not affiliated with William Jewell College in any official capacity.</string>
+	
+    <string-array name="array_entries_listpref_apptheme">
+        <item >Jewell Biz Theme</item>
+        <item >Android ICS Light Theme</item>
+        <item >Android ICS Dark Theme</item>
+    </string-array>
+    <string-array name="array_entryvalues_listpref_apptheme">
+        <item >0</item>
+        <item >1</item>
+        <item >2</item>
+    </string-array>
+	
+    
     
 
 </resources>
