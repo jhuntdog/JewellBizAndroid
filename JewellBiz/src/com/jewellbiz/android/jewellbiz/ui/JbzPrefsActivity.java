@@ -30,12 +30,11 @@ import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.text.util.Linkify;
-import android.view.View;
-import android.view.ViewTreeObserver;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.app.ActionBar.LayoutParams;
 import com.actionbarsherlock.app.SherlockPreferenceActivity;
 import com.actionbarsherlock.view.Window;
 import com.jewellbiz.android.jewellbiz.R;
@@ -56,7 +55,7 @@ public class JbzPrefsActivity extends SherlockPreferenceActivity {
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		setTheme(JbzPrefsActivity.THEME);
+		setTheme(R.style.ThemePrefs);
 		super.onCreate(savedInstanceState);
 		
 		
@@ -94,16 +93,8 @@ public class JbzPrefsActivity extends SherlockPreferenceActivity {
 			}
 		});
 		
-		/*ViewTreeObserver observer = getListView().getViewTreeObserver();
-		observer.addOnGlobalLayoutListener(layoutListener);*/
 	}
 	
-	/*@Override
-	public void onDestroy() {
-	  super.onDestroy();
-	  // Always detach ViewTreeObserver listeners when the view tears down
-	  getListView().getViewTreeObserver().removeGlobalOnLayoutListener(layoutListener);
-	}*/
 	
 	private void cancelRecurringAlarm(Context context) {
 		Intent downloader = new Intent(context, AlarmReceiver.class);
@@ -165,28 +156,6 @@ public class JbzPrefsActivity extends SherlockPreferenceActivity {
 		return null;
 		
 	}
-	
-/*	ViewTreeObserver.OnGlobalLayoutListener layoutListener = new ViewTreeObserver.OnGlobalLayoutListener() {
-
-		@Override
-		public void onGlobalLayout() {
-			int barHeight = getSupportActionBar().getHeight();
-			ListView listView = getListView();
-			FrameLayout.LayoutParams params = (LayoutParams) listView.getLayoutParams();
-			// The list view top-margin should always match the action bar height
-			if (params.topMargin != barHeight) {
-				params.topMargin = barHeight;
-				listView.setLayoutParams(params);
-			}
-			// The action bar doesn't update its height when hidden, so make top-margin zero
-			if (!getActivity().getActionBar().isShowing()) {
-				params.topMargin = 0;
-				listView.setLayoutParams(params);
-			}
-			
-		}
-		
-	};*/
 	
 	
 	

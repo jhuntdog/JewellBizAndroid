@@ -24,7 +24,7 @@
         
         <activity android:name="com.jewellbiz.android.jewellbiz.ui.ArticleActivity"></activity>
         
-        <activity android:name="com.jewellbiz.android.jewellbiz.ui.JbzPrefsActivity"></activity>
+        <activity android:name="com.jewellbiz.android.jewellbiz.ui.JbzPrefsActivity" android:theme="@style/ThemePrefs"></activity>
         
         <provider 
             android:name=".data.JbzProvider" 
