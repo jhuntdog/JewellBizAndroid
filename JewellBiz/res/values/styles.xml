@@ -86,5 +86,9 @@
         <item name="android:paddingTop">@dimen/layout_padding</item>
     </style>
     
+	<style name="ListHeader">
+        <item name="android:textSize">@dimen/text_size_medium</item>
+    </style>
+    
     
 </resources>

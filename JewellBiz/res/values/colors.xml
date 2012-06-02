@@ -5,6 +5,8 @@
     
     <color name="jewell_red">#FFC8002F</color>
     
+    <color name="text_primary">#fff1f1f1</color>
+    
     <color name="body_text_1">#ff000000</color>
     <color name="body_text_2">#99000000</color>
     <color name="body_text_disabled">#66000000</color>

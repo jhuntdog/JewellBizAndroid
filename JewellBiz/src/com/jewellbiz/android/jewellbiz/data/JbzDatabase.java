@@ -33,11 +33,6 @@ public class JbzDatabase extends SQLiteOpenHelper {
 			+ COL_DESC + " text, "
 			+ COL_READ + " INTEGER NOT NULL default 0" + ");";
 	
-	public static final String TABLE_ARTICLES_SEARCH = "searchtable";
-	public static final String _DOCID = "docid";
-	private static final String CREATE_TABLE_ARTICLE_SEARCH = "CREATE VIRTUAL TABLE "
-			+ TABLE_ARTICLES_SEARCH + " USING FTS3(" + COL_TITLE + " TEXT, " 
-			+ COL_DESC + " TEXT" + ");";
 	
 	private static final String DB_SCHEMA = CREATE_TABLE_ARTICLES;
 	
@@ -48,7 +43,6 @@ public class JbzDatabase extends SQLiteOpenHelper {
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		db.execSQL(DB_SCHEMA);
-		db.execSQL(CREATE_TABLE_ARTICLE_SEARCH);
 		seedData(db);
 		
 	}
@@ -77,7 +71,6 @@ public class JbzDatabase extends SQLiteOpenHelper {
         if (version != DB_VERSION) {
         	Log.w(DEBUG_TAG, "Database has incompatible version, starting from scratch");
         	db.execSQL("DROP TABLE IF EXISTS " + TABLE_ARTICLES);
-        	db.execSQL("DROP TABLE IF EXISTS " + TABLE_ARTICLES_SEARCH);
     		onCreate(db);
         }
 		
@@ -104,20 +97,6 @@ public class JbzDatabase extends SQLiteOpenHelper {
 		db.execSQL("ALTER TABLE " + TABLE_ARTICLES + " ADD COLUMN " + COL_DATE + " INTEGER NOT NULL DEFAULT '1297728000' ");
 	}
 	
-	public static void onRenewFTSTable(SQLiteDatabase db) {
-        db.beginTransaction();
-        try {
-            db.execSQL("drop table if exists " + TABLE_ARTICLES_SEARCH);
-            db.execSQL(CREATE_TABLE_ARTICLE_SEARCH);
-            db.execSQL("INSERT INTO " + TABLE_ARTICLES_SEARCH + "(docid," + COL_TITLE + ","
-                    + COL_DESC + ")" + " select " + ID + "," + COL_TITLE
-                    + "," + COL_DESC + " from " + TABLE_ARTICLES + ";");
-            db.setTransactionSuccessful();
-        } finally {
-            db.endTransaction();
-        }
-    }
-	
 	
 	private void seedData(SQLiteDatabase db) {
         db.execSQL("insert into articles (title, url, article_date) values ('Welcome to the Spring Edition of Jewell Business Today', 'http://jewellbiz.com/2012/03/15/welcome-to-the-spring-edition-of-jewell-business-today/', (strftime('%s', '2012-03-15')));");
@@ -127,72 +106,5 @@ public class JbzDatabase extends SQLiteOpenHelper {
 
     }
 	
-    
-	public static Cursor search(String selection, String[] selectionArgs, SQLiteDatabase db) {
-		
-		StringBuilder query = new StringBuilder();
-		// select final result columns
-		query.append("SELECT ");
-        query.append(ID).append(",");
-        query.append(COL_TITLE).append(",");
-        query.append(COL_DESC).append(",");
-        
-        query.append(" FROM ");
-        query.append("(");
-
-        // join all shows...
-        query.append("(");
-        query.append("SELECT ").append(BaseColumns._ID).append(" as sid,").append(COL_TITLE);
-        query.append(" FROM ").append(TABLE_ARTICLES);
-        query.append(")");
-        
-        query.append(" JOIN ");
-
-        // ...with matching episodes
-        query.append("(");
-        query.append("SELECT ");
-        query.append(ID).append(",");
-        query.append(COL_TITLE).append(",");
-        query.append(COL_DESC).append(",");
-
-        query.append(" FROM ");
-        // join searchtable results...
-        query.append("(");
-        query.append("SELECT ");
-        query.append(_DOCID).append(",");
-        query.append("snippet(" + TABLE_ARTICLES_SEARCH + ",'<b>','</b>','...')").append(" AS ")
-                .append(COL_DESC);
-        query.append(" FROM ").append(TABLE_ARTICLES_SEARCH);
-        query.append(" WHERE ").append(TABLE_ARTICLES_SEARCH).append(" MATCH ?");
-        query.append(")");
-        query.append(" JOIN ");
-        // ...with episodes table
-        query.append("(");
-        query.append("SELECT ");
-        query.append(ID).append(",");
-        query.append(COL_TITLE).append(",");
-        query.append(COL_DESC).append(",");
-        query.append(" FROM ").append(TABLE_ARTICLES);
-        query.append(")");
-        query.append(" ON ").append(ID).append("=").append(_DOCID);
-
-        query.append(")");
-        
-     // append given selection
-        if (selection != null) {
-            query.append(" WHERE ");
-            query.append("(").append(selection).append(")");
-        }
-        
-     // ordering
-        query.append(" ORDER BY ");
-        query.append(COL_TITLE).append(" ASC,");
-        
-     // search for anything starting with the given search term
-        selectionArgs[0] = "\"" + selectionArgs[0] + "*\"";
-
-        return db.rawQuery(query.toString(), selectionArgs);
-		
-	}
 
 }
