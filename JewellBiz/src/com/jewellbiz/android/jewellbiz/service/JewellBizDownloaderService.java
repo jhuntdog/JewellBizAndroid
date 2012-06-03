@@ -13,8 +13,9 @@ import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
 import com.jewellbiz.android.jewellbiz.R;
-import com.jewellbiz.android.jewellbiz.data.JbzDatabase;
-import com.jewellbiz.android.jewellbiz.data.JbzProvider;
+import com.jewellbiz.android.jewellbiz.data.JewellBizDatabase;
+import com.jewellbiz.android.jewellbiz.data.JewellBizProvider;
+import com.jewellbiz.android.jewellbiz.data.JewellContracts.Articles;
 import com.jewellbiz.android.jewellbiz.ui.MainActivity;
 
 import android.app.Notification;
@@ -28,12 +29,13 @@ import android.content.res.Resources;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.IBinder;
+import android.provider.MediaStore.Audio.ArtistColumns;
 import android.util.Log;
 
-public class JbzDownloaderService extends Service {
+public class JewellBizDownloaderService extends Service {
 	
-	private static final String DEBUG_TAG = "JbzDownloaderService";
-	private DownloaderTask jbzArticleDownloader;
+	private static final String DEBUG_TAG = "JewellBizDownloaderService";
+	private DownloaderTask jewellbizArticleDownloader;
 	
 	private static final int LIST_UPDATE_NOTIFICATION = 100;
 	
@@ -44,8 +46,8 @@ public class JbzDownloaderService extends Service {
 			String url = intent.getDataString();
 			if (url !=null && (url.length() > 0)) {
 				articlePath = new URL(url);
-				jbzArticleDownloader = new DownloaderTask();
-				jbzArticleDownloader.execute(articlePath);
+				jewellbizArticleDownloader = new DownloaderTask();
+				jewellbizArticleDownloader.execute(articlePath);
 			}
 		} catch (MalformedURLException e) {
 			Log.e(DEBUG_TAG, "Bad URL", e);
@@ -61,7 +63,7 @@ public class JbzDownloaderService extends Service {
 	
 	private class DownloaderTask extends AsyncTask<URL, Void, Boolean> {
 		
-		private static final String DEBUG_TAG = "JbzDownloaderService$DownloaderTask";
+		private static final String DEBUG_TAG = "JewellBizDownloaderService$DownloaderTask";
 		
 		@Override
 		protected Boolean doInBackground(URL... params) {
@@ -100,31 +102,31 @@ public class JbzDownloaderService extends Service {
                                 	if (articles.getName().equals("link")) {
                                     	articles.next();
                                         Log.d(DEBUG_TAG, "Link: " + articles.getText());
-                                        articleData.put(JbzDatabase.COL_URL, articles.getText());
+                                        articleData.put(Articles.ARTICLE_URL, articles.getText());
                                         
                                     } else if (articles.getName().equals("title")) {
                                     	articles.next();
-                                    	articleData.put(JbzDatabase.COL_TITLE, articles.getText());
+                                    	articleData.put(Articles.ARTICLE_TITLE, articles.getText());
                                     	
                                     } else if (articles.getName().equals("pubDate")) {
                                     	articles.next();
                                     	DateFormat parser = new SimpleDateFormat("E, dd MMM yyyy");
                                     	try {
                                     		Date date = parser.parse(articles.getText());
-                                    		articleData.put(JbzDatabase.COL_DATE, date.getTime() / 1000);
+                                    		articleData.put(Articles.ARTICLE_DATE, date.getTime() / 1000);
                                     		} catch (ParseException e) {
                                     			Log.e(DEBUG_TAG, "Error parsing date: " + articles.getText());
                                     		}
                                     } else if (articles.getName().equals("description")) {
                                     	articles.next();
-                                    	articleData.put(JbzDatabase.COL_DESC, articles.getText());
+                                    	articleData.put(Articles.OVERVIEW, articles.getText());
                                     }
                                     	
                                 } else if (eventType == XmlPullParser.END_TAG) {
                                     if (articles.getName().equals("item")) {
                                         // save the data, and then continue with
                                         // the outer loop
-                                        getContentResolver().insert(JbzProvider.CONTENT_URI, articleData);
+                                        getContentResolver().insert(Articles.CONTENT_URI, articleData);
                                         break;
                                     }
                                 }
@@ -148,7 +150,7 @@ public class JbzDownloaderService extends Service {
 		
 		@Override
 		protected void onPostExecute(Boolean result) {
-			Context ctx = JbzDownloaderService.this.getApplicationContext();
+			Context ctx = JewellBizDownloaderService.this.getApplicationContext();
 			
 			Intent notificationIntent = new Intent(ctx, MainActivity.class);
 			PendingIntent contentIntent = PendingIntent.getActivity(ctx, 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);

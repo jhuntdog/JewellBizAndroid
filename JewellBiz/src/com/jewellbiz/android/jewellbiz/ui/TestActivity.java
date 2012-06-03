@@ -3,49 +3,47 @@ package com.jewellbiz.android.jewellbiz.ui;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
 
 import com.actionbarsherlock.app.ActionBar;
-import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 import com.jewellbiz.android.jewellbiz.R;
 import com.jewellbiz.android.jewellbiz.service.JbzDownloaderService;
+import com.jewellbiz.android.jewellbiz.service.JewellBizDownloaderService;
 
-public class MainActivity extends BaseActivity implements 
-		HeadlinesFragment.OnItemSelectedListener {
+public class TestActivity extends BaseActivity implements TestListFragment.OnItemSelectedListener {
 	
 	private String[] mToggleLabels = {"Show Titles", "Hide Titles"};
 	private boolean mTitlesHidden = false;
 	
 	private boolean mDualPane = false;
-	HeadlinesFragment mHeadlinesFragment;
+	TestListFragment mTestListFragment;
 	ArticleFragment mArticleFragment;
 	
 	@Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        
-        if(savedInstanceState != null) {
-        	mTitlesHidden = savedInstanceState.getBoolean("titlesHidden");
-        }
-        
-        setContentView(R.layout.main);
-        
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayShowTitleEnabled(false);
-        
-        // find our fragments
-        mHeadlinesFragment = (HeadlinesFragment) getSupportFragmentManager().findFragmentById(R.id.headlines_frag);
-        mArticleFragment = (ArticleFragment) getSupportFragmentManager().findFragmentById(R.id.article_frag);
-        
-        if (mArticleFragment != null) mDualPane = true;
-        
-        if (mTitlesHidden) {
-        	getSupportFragmentManager().beginTransaction().hide(mHeadlinesFragment);
-        }
-        
+	public void onCreate(Bundle savedInstanceState) {
+	    super.onCreate(savedInstanceState);
+	    
+	    if(savedInstanceState != null) {
+	    	mTitlesHidden = savedInstanceState.getBoolean("titlesHidden");
+	    }
+	    
+	    setContentView(R.layout.testing_main);
+	    
+	    ActionBar actionBar = getSupportActionBar();
+	    actionBar.setDisplayShowTitleEnabled(false);
+	    
+	    // find our fragments
+	    mTestListFragment = (TestListFragment) getSupportFragmentManager().findFragmentById(R.id.test_list_frag);
+	    mArticleFragment = (ArticleFragment) getSupportFragmentManager().findFragmentById(R.id.article_frag);
+	    
+	    if (mArticleFragment != null) mDualPane = true;
+	    
+	    if (mTitlesHidden) {
+	    	getSupportFragmentManager().beginTransaction().hide(mTestListFragment);
+	    }
+	    
 	}
 	
 	// Options Menu
@@ -53,7 +51,7 @@ public class MainActivity extends BaseActivity implements
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		MenuInflater inflater = getSupportMenuInflater();
-		inflater.inflate(R.menu.main_menu, menu);
+		inflater.inflate(R.menu.test_menu, menu);
 		
 		return true;
 	}
@@ -68,7 +66,7 @@ public class MainActivity extends BaseActivity implements
 		}
 		
 		// refresh menu item
-		Intent refreshIntent = new Intent(getApplicationContext(), JbzDownloaderService.class);
+		Intent refreshIntent = new Intent(getApplicationContext(), JewellBizDownloaderService.class);
 		refreshIntent.setData(Uri.parse(getString(R.string.default_url)));
 		MenuItem refresh = menu.findItem(R.id.menu_refresh);
 		refresh.setIntent(refreshIntent);
@@ -86,6 +84,9 @@ public class MainActivity extends BaseActivity implements
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		
+		case R.id.menu_search:
+			onSearchRequested();
+			return true;
 		case R.id.menu_refresh:
 			startService(item.getIntent());
 			return true;
@@ -94,16 +95,11 @@ public class MainActivity extends BaseActivity implements
 			startActivity(item.getIntent());
 			return true;
 			
-		case R.id.menu_testhelper:
-			Intent newTestIntent = new Intent(getApplicationContext(), TestActivity.class);
-			startActivity(newTestIntent);
-			return true;
-			
 		default:
 			return super.onOptionsItemSelected(item);
 		}
 	}
-
+	
 	@Override
 	public void onItemSelected(String articleUrl) {
 		ArticleFragment mArticleFragment = (ArticleFragment) getSupportFragmentManager()
@@ -118,5 +114,13 @@ public class MainActivity extends BaseActivity implements
 		}
 		
 	}
-
+	
+	 @Override
+    public boolean onSearchRequested() {
+		 Bundle args = new Bundle();
+		 startSearch(null, false, args, false);
+		 
+		 
+		 return true;
+	}
 }

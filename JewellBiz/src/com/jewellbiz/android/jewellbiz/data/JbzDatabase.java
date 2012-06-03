@@ -75,7 +75,6 @@ public class JbzDatabase extends SQLiteOpenHelper {
         	db.execSQL("DROP TABLE IF EXISTS " + TABLE_ARTICLES);
     		onCreate(db);
         }
-		
 	}
 	
 	/**

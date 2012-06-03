@@ -11,6 +11,11 @@
     <string name="title_viewerName">JewellBizViewer</string>
 	
 	<string name="empty_list_label">You have no Articles to read!</string>
+	
+	<string name="article_title">Title</string>
+	<string name="article_date">Date</string>
+	<string name="article_desc">Description</string>
+	<string name="article_readstate">Read State</string>
     
 	<!--  Main Options Menu  -->
 	<string name="menu_share">Share</string>

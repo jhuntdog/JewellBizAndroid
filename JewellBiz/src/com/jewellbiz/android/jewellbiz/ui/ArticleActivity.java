@@ -32,6 +32,13 @@ public class ArticleActivity extends BaseActivity {
 	
 	public static final String DEBUG_TAG = "ContentActivity";
 	
+	/**
+     * Data which has to be passed when creating this activity. All Bundle
+     * extras are integer.
+     */
+    public interface InitBundle {
+        String ARTICLE_ID = "article_id";
+    }
 	
 	 @Override
 	 public void onCreate(Bundle savedInstanceState) {

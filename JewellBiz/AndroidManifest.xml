@@ -20,6 +20,9 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="com.jewellbiz.android.jewellbiz.ui.SearchActivity" />
         </activity>
         
         <activity android:name="com.jewellbiz.android.jewellbiz.ui.ArticleActivity"></activity>
@@ -31,15 +34,41 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.jewellbiz.android.jewellbiz.ui.MainActivity" />
         </activity>
-        
+
         <provider 
             android:name=".data.JbzProvider" 
             android:authorities="com.jewellbiz.android.jewellbiz.data.JbzProvider"></provider>
         
+         <provider 
+            android:name=".data.JewellBizProvider" 
+            android:authorities="com.jewellbiz.android.jewellbiz.data.JewellBizProvider"></provider>
+        
         <service 
-            android:name=".service.JbzDownloaderService"></service>
+            android:name="com.jewellbiz.android.jewellbiz.service.JbzDownloaderService"></service>
+        <service 
+            android:name="com.jewellbiz.android.jewellbiz.service.JewellBizDownloaderService"></service>
         <receiver 
             android:name=".receiver.AlarmReceiver"></receiver>
+        <activity android:name="com.jewellbiz.android.jewellbiz.ui.TestActivity">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value="com.jewellbiz.android.jewellbiz.ui.SearchActivity" />
+        </activity>
+        
+        <activity 
+            android:name="com.jewellbiz.android.jewellbiz.ui.SearchActivity"
+            android:launchMode="singleTop" >
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.jewellbiz.android.jewellbiz.ui.MainActivity" />
+            
+        </activity>
         
         
     </application>
