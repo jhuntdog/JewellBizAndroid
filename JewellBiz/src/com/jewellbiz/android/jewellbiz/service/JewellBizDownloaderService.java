@@ -17,6 +17,7 @@ import com.jewellbiz.android.jewellbiz.data.JewellBizDatabase;
 import com.jewellbiz.android.jewellbiz.data.JewellBizProvider;
 import com.jewellbiz.android.jewellbiz.data.JewellContracts.Articles;
 import com.jewellbiz.android.jewellbiz.ui.MainActivity;
+import com.jewellbiz.android.jewellbiz.ui.TestActivity;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -152,7 +153,7 @@ public class JewellBizDownloaderService extends Service {
 		protected void onPostExecute(Boolean result) {
 			Context ctx = JewellBizDownloaderService.this.getApplicationContext();
 			
-			Intent notificationIntent = new Intent(ctx, MainActivity.class);
+			Intent notificationIntent = new Intent(ctx, TestActivity.class);
 			PendingIntent contentIntent = PendingIntent.getActivity(ctx, 0, notificationIntent, PendingIntent.FLAG_CANCEL_CURRENT);
 			
 			NotificationManager notificationManager = (NotificationManager) ctx.getSystemService(NOTIFICATION_SERVICE);

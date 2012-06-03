@@ -36,11 +36,11 @@
         </activity>
 
         <provider 
-            android:name=".data.JbzProvider" 
+            android:name="com.jewellbiz.android.jewellbiz.data.JbzProvider" 
             android:authorities="com.jewellbiz.android.jewellbiz.data.JbzProvider"></provider>
         
          <provider 
-            android:name=".data.JewellBizProvider" 
+            android:name="com.jewellbiz.android.jewellbiz.data.JewellBizProvider" 
             android:authorities="com.jewellbiz.android.jewellbiz.data.JewellBizProvider"></provider>
         
         <service 
@@ -49,6 +49,7 @@
             android:name="com.jewellbiz.android.jewellbiz.service.JewellBizDownloaderService"></service>
         <receiver 
             android:name=".receiver.AlarmReceiver"></receiver>
+        
         <activity android:name="com.jewellbiz.android.jewellbiz.ui.TestActivity">
             <meta-data
                 android:name="android.app.default_searchable"
