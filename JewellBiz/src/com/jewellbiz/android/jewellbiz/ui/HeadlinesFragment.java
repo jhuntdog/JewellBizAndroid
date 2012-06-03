@@ -47,6 +47,9 @@ import com.jewellbiz.android.jewellbiz.R;
 import com.jewellbiz.android.jewellbiz.data.JbzDatabase;
 import com.jewellbiz.android.jewellbiz.data.JbzProvider;
 import com.jewellbiz.android.jewellbiz.data.JbzSharedPrefs;
+import com.jewellbiz.android.jewellbiz.data.JewellBizDatabase;
+import com.jewellbiz.android.jewellbiz.data.JewellBizProvider;
+import com.jewellbiz.android.jewellbiz.data.JewellContracts.Articles;
 import com.jewellbiz.android.jewellbiz.service.JbzDownloaderService;
 
 public class HeadlinesFragment extends SherlockListFragment implements 
@@ -168,8 +171,6 @@ public class HeadlinesFragment extends SherlockListFragment implements
 		super.onDestroy();
 	}
 	
-	
-	
 
 	@Override
 	public void onListItemClick(ListView l, View v, int position, long id) {
@@ -204,6 +205,7 @@ public class HeadlinesFragment extends SherlockListFragment implements
 		JbzDatabase.COL_TITLE, JbzDatabase.COL_DATE,
 		JbzDatabase.COL_READ };
 	private static final int[] UI_BINDING_TO = {R.id.title, R.id.date, R.id.title };
+
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {

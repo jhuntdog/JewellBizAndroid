@@ -33,8 +33,10 @@ public class JbzDatabase extends SQLiteOpenHelper {
 			+ COL_DESC + " text, "
 			+ COL_READ + " INTEGER NOT NULL default 0" + ");";
 	
-	
 	private static final String DB_SCHEMA = CREATE_TABLE_ARTICLES;
+	
+	// Searchable Database
+	private static final String FTS_VIRTUAL_SEARCH_TABLE = "searchtable";
 	
 	public JbzDatabase(Context context) {
 		super(context, DB_NAME, null, DB_VERSION);

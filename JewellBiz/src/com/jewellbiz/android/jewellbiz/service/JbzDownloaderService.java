@@ -115,8 +115,11 @@ public class JbzDownloaderService extends Service{
                                     		} catch (ParseException e) {
                                     			Log.e(DEBUG_TAG, "Error parsing date: " + articles.getText());
                                     		}
+                                    } else if (articles.getName().equals("description")) {
+                                    	articles.next();
+                                    	articleData.put(JbzDatabase.COL_DESC, articles.getText());
                                     }
-                                    
+                                    	
                                 } else if (eventType == XmlPullParser.END_TAG) {
                                     if (articles.getName().equals("item")) {
                                         // save the data, and then continue with
