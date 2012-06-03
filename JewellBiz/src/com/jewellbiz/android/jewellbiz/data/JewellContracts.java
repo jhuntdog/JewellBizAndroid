@@ -33,7 +33,7 @@ public class JewellContracts {
 	}
 	
 	
-	public static final String CONTENT_AUTHORITY = "com.jewellbiz.android.jewellbiz.data.JewellBizProvider";
+	public static final String CONTENT_AUTHORITY = "com.jewellbiz.android.jewellbiz";
 
     private static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
     
