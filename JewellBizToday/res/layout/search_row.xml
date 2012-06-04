@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/default_padding" >
+    
+    <TextView 
+        android:id="@+id/TextViewSearchJbzName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/inline_padding"
+        android:text="@string/app_name"
+        android:textAllCaps="true"
+        android:textSize="@dimen/text_size_xsmall"
+        android:textStyle="bold" >
+    </TextView>
+    
+    <TextView
+        android:id="@+id/TextViewSearchRow"
+        style="@style/ListHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/inline_padding"
+        android:text="@string/app_name" >
+    </TextView>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/inline_padding"
+        android:paddingTop="@dimen/inline_padding" >
+
+        <TextView
+            android:id="@+id/TextViewSearchArticleTitles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="@dimen/default_padding"
+            android:text="Article X Date X" />
+
+        <TextView
+            android:id="@+id/TextViewSearchArticleReadState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/TextViewSearchArticleTitles"
+            android:text="readstate" />
+        
+    </RelativeLayout>
+    
+    <TextView
+        android:id="@+id/TextViewSearchSnippet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/inline_padding"
+        android:paddingTop="@dimen/inline_padding"
+        android:text="...some bla..." >
+    </TextView>
+
+    
+
+</LinearLayout>

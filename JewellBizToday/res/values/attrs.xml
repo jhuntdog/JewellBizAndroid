@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <declare-styleable name="AppTheme">
+        <attr name="listDragShadowBackground" format="reference" />
+        
+        <attr name="menuIconShare" format="reference" />
+        <attr name="menuIconSearch" format="reference" />
+        <attr name="menuIconRefresh" format="reference" />
+        <attr name="menuIconToggle" format="reference" />
+        <attr name="menuIconPrefs" format="reference" />
+<!--         <attr name="menuIconHelp" format="reference" /> -->
+        <attr name="menuIconAbout" format="reference" />
+        
+	</declare-styleable>
+	
+</resources>

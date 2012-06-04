@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <item android:id="@+id/menu_search"
+        android:icon="?attr/menuIconSearch" 
+        android:title="@string/menu_search" 
+        android:showAsAction="collapseActionView|ifRoom"
+        android:actionViewClass="android.widget.SearchView" />
+    
+    <item android:id="@+id/menu_share"
+         android:icon="?attr/menuIconShare" 
+         android:title="@string/menu_share" 
+         android:showAsAction="ifRoom"
+         android:actionProviderClass="com.actionbarsherlock.widget.ShareActionProvider" />
+    
+    <item android:id="@+id/menu_refresh" 
+        android:icon="?attr/menuIconRefresh" 
+        android:title="@string/menu_refresh" 
+        android:showAsAction="ifRoom"/>
+    
+    <item android:id="@+id/menu_toggleList"
+        android:icon="?attr/menuIconToggle" 
+        android:title="@string/menu_toggleList" 
+        android:showAsAction="ifRoom|withText" />
+    
+    <item android:id="@+id/menu_markAllRead" 
+        android:icon="@drawable/ic_menu_mark" 
+        android:title="@string/menu_markallread" 
+        android:showAsAction="withText" />
+    
+    <item android:id="@+id/menu_testhelper"
+        android:title="Test Helper" />
+    
+    <item android:id="@+id/menu_prefs" 
+        android:icon="@drawable/ic_menu_preferences" 
+        android:title="@string/menu_prefs" 
+        android:showAsAction="ifRoom|withText"/>
+    
+</menu>

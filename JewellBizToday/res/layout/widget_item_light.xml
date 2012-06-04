@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="match_parent"
+    android:layout_height="46dp"
+    android:paddingLeft="24dp"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+	android:background="@drawable/appwidget_item_light_bg" >
+    
+    <TextView 
+	    android:id="@+id/widget_item_title"
+	    android:layout_width="match_parent"
+	    android:layout_height="30dp"
+	    android:gravity="center_vertical"
+	    android:textColor="#ffffff"
+	    android:textSize="24sp" />
+    
+    <TextView 
+        android:id="@+id/widget_item_date" 
+        android:layout_width="match_parent"
+	    android:layout_height="14dp"
+	    android:textColor="#ffffff"
+	    android:textStyle="bold"
+	    android:textSize="12sp" />
+
+</LinearLayout>

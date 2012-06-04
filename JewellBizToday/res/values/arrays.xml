@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+	<string-array name="article_titles">
+        <item>Welcome to the Spring Edition of Jewell Business Today</item>
+        <item>Scott A. McCormick to Deliver 2012 Distinguished Executive Lecture</item>
+        <item>Career Spotlight – Hallmark</item>
+        <item>Jewell Welcomes New Professor of Business and Nonprofit Leadership</item>
+    </string-array>
+	<string-array name="article_links">
+        <item>http://jewellbiz.com/2012/03/15/welcome-to-the-spring-edition-of-jewell-business-today/</item>
+        <item>http://jewellbiz.com/2012/03/15/scott-a-mccormick-to-deliver-2012-distinguished-executive-lecture/</item>
+        <item>http://jewellbiz.com/2012/03/15/career-spotlight-hallmark/</item>
+        <item>http://jewellbiz.com/2012/03/15/jewell-welcomes-new-professor-of-business-and-nonprofit-leadership/</item>
+    </string-array>
+    
+    
+</resources>

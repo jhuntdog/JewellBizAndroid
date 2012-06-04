@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+	<style name="ThemeJewell" parent="Theme.Sherlock.Light.ForceOverflow">
+	    <item name="android:windowActionBarOverlay">true</item>
+	    <item name="windowActionBarOverlay">true</item>
+	    
+	    <item name="android:actionBarItemBackground">@drawable/jbz_selectable_background</item>
+		<item name="actionBarItemBackground">@drawable/jbz_selectable_background</item>
+		
+		<item name="android:popupMenuStyle">@style/JewellPopupMenu</item>
+		<item name="popupMenuStyle">@style/JewellPopupMenu</item>
+		
+		<item name="android:dropDownListViewStyle">@style/JewellDropDownListView</item>
+		<item name="dropDownListViewStyle">@style/JewellDropDownListView</item>
+		
+		<item name="menuIconShare">@drawable/ic_menu_share_holo_light</item>
+	    <item name="menuIconSearch">@drawable/ic_menu_search_holo_light</item>
+	    <item name="menuIconRefresh">@drawable/ic_refresh_holo_light</item>
+	    <item name="menuIconToggle">@drawable/ic_menu_toggle_holo_light</item>
+	    <item name="menuIconAbout">@drawable/ic_about_holo_light</item>
+	    
+	</style>
+    
+    
+	<style name="ThemeICSLight" parent="Theme.Sherlock.Light.ForceOverflow">
+	    <!-- <item name="actionBarStyle">@style/ActionBarLight</item>
+	    <item name="android:actionBarStyle">@style/ActionBarLight</item> -->
+	    <item name="android:windowActionBarOverlay">true</item>
+	    <item name="listDragShadowBackground">@android:color/background_light</item>
+	    
+	    <item name="menuIconShare">@drawable/ic_menu_share_holo_light</item>
+	    <item name="menuIconSearch">@drawable/ic_menu_search_holo_light</item>
+	    <item name="menuIconRefresh">@drawable/ic_refresh_holo_light</item>
+	    <item name="menuIconToggle">@drawable/ic_menu_toggle_holo_light</item>
+	    <item name="menuIconAbout">@drawable/ic_about_holo_light</item>
+	    
+    </style>
+    
+	<style name="ThemeICSDark" parent="Theme.Sherlock.ForceOverflow">
+<!-- 	    <item name="actionBarStyle">@style/ActionBarDark</item> -->
+<!-- 	    <item name="android:actionBarStyle">@style/ActionBarDark</item> -->
+	    <!-- <item name="android:windowActionBarOverlay">true</item> -->
+	    <item name="listDragShadowBackground">@android:color/background_dark</item>
+	    
+	    <item name="menuIconShare">@drawable/ic_menu_share_holo_dark</item>
+	    <item name="menuIconSearch">@drawable/ic_menu_search_holo_dark</item>
+	    <item name="menuIconRefresh">@drawable/ic_refresh_holo_dark</item>
+	    <item name="menuIconToggle">@drawable/ic_menu_toggle_holo_dark</item>
+	    <item name="menuIconAbout">@drawable/ic_about_holo_dark</item>
+	    
+    </style>
+    
+	<style name="ThemePrefs" parent="Theme.Sherlock.Light.DarkActionBar.ForceOverflow">
+	    <item name="menuIconShare">@drawable/ic_menu_share_holo_dark</item>
+	    <item name="menuIconSearch">@drawable/ic_menu_search_holo_dark</item>
+	    <item name="menuIconRefresh">@drawable/ic_refresh_holo_dark</item>
+	    <item name="menuIconToggle">@drawable/ic_menu_toggle_holo_dark</item>
+	    <item name="menuIconAbout">@drawable/ic_about_holo_dark</item>
+	</style>
+    
+<!-- 	<style name="ActionBar" parent="@android:style/Widget.Holo.ActionBar" /> -->
+    
+	<style name="ActionBarLight" parent="Widget.Sherlock.Light.ActionBar">
+    	<!-- <item name="android:background">@color/actionbar_background_light</item> -->
+    </style>
+    
+	<style name="ActionBarDark" parent="Widget.Sherlock.ActionBar">
+    	<item name="android:background">@color/actionbar_background_dark</item>
+	</style>
+	
+	<!-- style the overflow menu -->
+	<style name="JewellPopupMenu" parent="Widget.Sherlock.Light.PopupMenu">
+		<item name="android:popupBackground">@drawable/jbz_menu_dropdown_panel_holo_light</item>
+	</style>
+	
+	<!-- style the items within the overflow menu -->
+	<style name="JewellDropDownListView" parent="Widget.Sherlock.ListView.DropDown">
+		<item name="android:listSelector">@drawable/jbz_selectable_background</item>
+	</style>
+	
+	<style name="ScrollingLayout">
+        <item name="android:paddingBottom">@dimen/default_padding</item>
+        <item name="android:paddingLeft">@dimen/layout_padding</item>
+        <item name="android:paddingRight">@dimen/layout_padding</item>
+        <item name="android:paddingTop">@dimen/layout_padding</item>
+    </style>
+    
+	<style name="ListHeader">
+        <item name="android:textSize">@dimen/text_size_medium</item>
+    </style>
+    
+    
+</resources>
